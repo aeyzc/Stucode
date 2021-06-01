@@ -1,4 +1,4 @@
-![](https://img.itch.zone/aW1nLzU3MjI5ODUuanBn/original/7hMGkE.jpg)
+![](https://img.itch.zone/aW1nLzYxMDE1NTEucG5n/original/xm1iBC.png)
  
  # [Game Link](https://aeyzc.itch.io/stucode "Game Link")
  
