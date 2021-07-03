@@ -10,7 +10,7 @@ public class CursorManager : MonoBehaviour
 
     private void Awake()
     {
-        SingletonThisGameObject();
+        Instance = this;
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
 
 

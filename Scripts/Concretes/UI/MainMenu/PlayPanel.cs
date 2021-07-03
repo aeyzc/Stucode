@@ -9,12 +9,12 @@ public class PlayPanel : BaseMMPanel
     int pageCount = 1;
     [SerializeField] GameObject levelsPanel,levelButtonPrefab,temp;
     [SerializeField] Button leftButton, rightButton;
-    [SerializeField] string[] levels;
+    [SerializeField] int levelCount=4;
 
     
     private void Start()
     {
-        for(int i = 0; i < levels.Length; i++)
+        for(int i = 0; i < levelCount; i++)
         {
             temp=Instantiate(levelButtonPrefab);
             temp.transform.parent = levelsPanel.transform;

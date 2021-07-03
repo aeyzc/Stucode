@@ -15,5 +15,20 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        
+            if (isWalking && isOnFloor && GameManager.Instance.isGameActive)
+            {
+                gameObject.GetComponent<AudioSource>().volume = 0.5f * PlayerPrefs.GetFloat("sfxvolume")* PlayerPrefs.GetFloat("soundvolume");
+
+            }
+
+            else
+            {
+                gameObject.GetComponent<AudioSource>().volume = 0;
+
+            }
+    }
 
 }

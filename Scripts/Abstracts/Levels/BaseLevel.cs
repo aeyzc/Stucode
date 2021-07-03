@@ -8,5 +8,7 @@ public abstract class BaseLevel : MonoBehaviour
     public Transform bigSpawnPoint;
     public List<BaseCode> levelCodes = new List<BaseCode> { };
     public abstract void PassNextLevel();
+    public abstract void SetLevel();
+
 
 }

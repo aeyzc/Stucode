@@ -45,7 +45,7 @@ public class IdeProgram : BaseProgram
     public void SendCodeButton()
     {
         string code = CodeInputField.text.ToLower();
-        List<BaseCode> codes = level1Codes.Instance.levelCodes;
+        List<BaseCode> codes = GameObject.Find("LevelManager").GetComponent<BaseLevel>().levelCodes;
 
         foreach (var i in codes)
         {

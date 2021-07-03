@@ -26,6 +26,7 @@ public class PauseMenuManager : BaseMenu
     public void restartLevel()
     {
         GameManager.Instance.isGameActive = true;
+        GameObject.Find("LevelManager").GetComponent<BaseLevel>().SetLevel();
         CursorManager.Instance.continuedGameCursor();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

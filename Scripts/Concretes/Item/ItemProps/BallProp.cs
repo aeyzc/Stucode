@@ -52,17 +52,18 @@ public class BallProp : ItemProp
     void setPoolBall()
     {
         
-        //gameObject.GetComponent<MovableItem>().ItemIcon = poolIcon;
         gameObject.GetComponent<Collider>().material = null;
+        gameObject.GetComponent<Rigidbody>().mass = 20;
         gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material = pool;
         selectedTypeIndex = 0;
     }
 
     void setBeachBall()
     {
-        //gameObject.GetComponent<MovableItem>().ItemIcon = beachIcon;
+
         gameObject.GetComponent<Collider>().material = beachPM;
         selectedTypeIndex = 1;
+        gameObject.GetComponent<Rigidbody>().mass = 1;
         gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material = beach;
 
     }

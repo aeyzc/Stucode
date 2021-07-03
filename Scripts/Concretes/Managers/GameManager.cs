@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        SingletonThisGameObject();
+        Instance = this;
     }
 
     private void SingletonThisGameObject()

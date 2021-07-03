@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterMover : MonoBehaviour
 {
-    float charSpeed = 10,jumpPower=17500;
+    float charSpeed = 10,jumpPower=6;
     public GameObject charCamera;
     public Transform spawnPoint;
     public Rigidbody rb;
@@ -34,7 +34,7 @@ public class CharacterMover : MonoBehaviour
         if (GameManager.Instance.isGameActive)
         {
 
-            if (!PlayerController.Instance.isOnFloor && charSpeed > 0)
+            if (!PlayerController.Instance.isOnFloor && charSpeed > 1)
             {
                 charSpeed -= Time.deltaTime * 1.5f;
             }
@@ -67,13 +67,18 @@ public class CharacterMover : MonoBehaviour
 
             if (PlayerController.Instance.isOnFloor && Input.GetKeyDown(KeyCode.Space))
             {
-                rb.AddForce(transform.up * jumpPower);
+                Jump();
 
 
             }
         }
-        
     }
+    void Jump()
+    {
+        AudioSource.PlayClipAtPoint(Audioclips.Instance.jump, PlayerController.Instance.gameObject.transform.position, PlayerPrefs.GetFloat("sfxvolume")*PlayerPrefs.GetFloat("soundvolume"));
+        rb.velocity = transform.up * jumpPower;
+    }
+
     public void Reset()
     {
         transform.position = spawnPoint.position;
